@@ -10,7 +10,7 @@ const menuLines = menu.children;
 menu.addEventListener('click', () => {
   if (nav.style.display === 'none') {
     nav.style.display = 'block';
-    body.style.overflowY = 'hidden';
+    body.style.overflow = 'hidden';
     logoPathOne.style.fill = '#fff';
     logoPathTwo.style.fill = '#fff';
     logoPathThree.style.fill = '#252b46';
@@ -20,7 +20,7 @@ menu.addEventListener('click', () => {
     }
   } else {
     nav.style.display = 'none';
-    body.style.overflowY = 'auto';
+    body.style.overflow = 'auto';
     logoPathOne.style.fill = '';
     logoPathTwo.style.fill = '';
     logoPathThree.style.fill = '';
