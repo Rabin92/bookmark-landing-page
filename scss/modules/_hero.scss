@@ -1,0 +1,50 @@
+// ==========================================================================
+// Hero Section
+// ==========================================================================
+
+.hero {
+  padding: $padding;
+
+  @media #{$break--l} {
+    @include flexy();
+  }
+
+  @include e(image) {
+    position: relative;
+    flex: 2;
+    order: 2;
+    margin-left: em(25px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 20%;
+      top: em(50px);
+      right: 0;
+      width: 150%;
+      bottom: 0;
+      z-index: -1;
+      border-radius: em(150px) em(0px) em(0px) em(150px);
+      background-color: $secondary--col;
+
+      @media #{$break--m} {
+        top: em(150px);
+      }
+    }
+  }
+
+  @include e(content) {
+    order: 1;
+    flex: 1.5;
+    text-align: $text--center;
+    padding: em(40px) em(0px);
+
+    @media #{$break--l} {
+      text-align: initial;
+    }
+  }
+
+  @include e(copy) {
+    margin-bottom: em(30px);
+  }
+}

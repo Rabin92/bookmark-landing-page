@@ -1,0 +1,42 @@
+// ==========================================================================
+// Menu
+// ==========================================================================
+
+.menu {
+  cursor: $cursor;
+  z-index: 3;
+
+  @media #{$break--l} {
+    display: none;
+  }
+
+  @include e(first) {
+    margin-bottom: 0.2em;
+    @extend %menu;
+  }
+
+  @include e(middle) {
+    margin-bottom: 0.2em;
+    @extend %menu;
+    width: 12px;
+  }
+
+  @include e(third) {
+    @extend %menu;
+  }
+}
+
+.active .menu__first {
+  transform: rotate(45deg) translate(8px, 8px);
+  transition: transform 0.35s ease-in-out;
+}
+
+.active .menu__middle {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.active .menu__third {
+  transform: rotate((-45deg));
+  transition: transform 0.35s ease-in-out;
+}

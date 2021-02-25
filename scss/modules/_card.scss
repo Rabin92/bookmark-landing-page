@@ -1,0 +1,73 @@
+// ==========================================================================
+// Card Section
+// ==========================================================================
+
+.card-container {
+  padding: 1em;
+
+  @include centerBox();
+}
+
+.flex-container {
+  @media #{$break--m} {
+    @include centerBox();
+    flex-wrap: wrap;
+    min-height: 450px;
+  }
+}
+
+.card {
+  padding: 2em 1em 1em;
+  text-align: $text--center;
+  border-radius: em(10px);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  position: relative;
+  margin-bottom: em(30px);
+
+  @media #{$break--m} {
+    margin-right: em(20px);
+
+    &:hover {
+      transform: translateY(-10px);
+      transition: transform 200ms ease-in-out;
+    }
+
+    @include m(one) {
+      align-self: flex-start;
+    }
+
+    @include m(two) {
+      align-self: center;
+    }
+
+    @include m(three) {
+      align-self: flex-end;
+    }
+  }
+
+  @include e(img-one) {
+    margin-bottom: em(30px);
+  }
+
+  @include e(title) {
+    margin-bottom: em(10px);
+  }
+
+  @include e(subtitle) {
+    margin-bottom: em(50px);
+    font-size: 0.889rem;
+
+    &::after {
+      content: '';
+      background: url('#{$path--rel}/bg-dots.svg') no-repeat;
+      background-size: contain;
+      height: em(10px);
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-top: em(25px);
+    }
+  }
+}

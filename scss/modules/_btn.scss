@@ -1,0 +1,96 @@
+// ==========================================================================
+// Button
+// ==========================================================================
+
+.btn {
+  padding: 0.65em 0.55em;
+  background-color: $secondary--col;
+  border-radius: em(5px);
+  display: block;
+  color: $white;
+  font-weight: $font-weight--medium;
+  box-shadow: $btn--shadow;
+  margin-bottom: em(20px);
+
+  @media #{$break--m} {
+    margin-bottom: initial;
+  }
+
+  @media #{$break--s} {
+    display: inline-block;
+  }
+
+  + .btn {
+    background-color: $white;
+    color: $manatee;
+
+    @extend %border;
+
+    &:hover {
+      border: 2px solid $primary--col;
+      color: #585862;
+    }
+
+    @media #{$break--s} {
+      margin-left: em(15px);
+    }
+  }
+
+  @include m(hover) {
+    @extend %border;
+
+    &:hover {
+      background-color: $white;
+      color: $secondary--col;
+      border: 2px solid $secondary--col;
+    }
+  }
+
+  @include m(mod) {
+    color: $white;
+    background-color: $cta--col;
+    padding: 0.4em 1em;
+
+    @extend %border;
+
+    &:hover {
+      background-color: $white;
+      border: 2px solid $carnation;
+      color: $carnation;
+    }
+  }
+
+  @include m(info) {
+    display: none;
+    margin-top: $mt;
+
+    @media #{$break--m} {
+      display: inline-block;
+    }
+  }
+
+  @include m(accordion) {
+    display: inline-block;
+    margin-top: $mt;
+  }
+
+  @include m(contact) {
+    width: 100%;
+    background-color: $cta--col;
+    color: $white;
+    margin-top: em(20px);
+
+    @extend %border;
+
+    &:hover {
+      background-color: $white;
+      border: 2px solid $carnation;
+      color: $carnation;
+    }
+
+    @media #{$break--m} {
+      width: initial;
+      margin-top: initial;
+    }
+  }
+}

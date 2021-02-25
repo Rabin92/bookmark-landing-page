@@ -1,0 +1,23 @@
+// ==========================================================================
+// Extension Section
+// ==========================================================================
+
+.extension-container {
+  padding: 2em $gutters 2em;
+  text-align: $text--center;
+
+  @media #{$break--m} {
+    @include centerBox();
+  }
+}
+
+.extension {
+  @media #{$break--m} {
+    width: 65%;
+    max-width: $m-width;
+  }
+
+  @include e(title) {
+    margin-bottom: $mb;
+  }
+}

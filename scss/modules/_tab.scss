@@ -1,0 +1,147 @@
+// ==========================================================================
+// Tab Section
+// ==========================================================================
+
+.tab-container {
+  @media #{$break--m} {
+    @include flexy($j-content: center, $a-items: null);
+  }
+}
+
+.tab {
+  text-align: $text--center;
+  padding: $gutters;
+
+  @media #{$break--m} {
+    border-bottom: 1px solid $manatee;
+    padding-bottom: em(20px);
+    width: 100%;
+    max-width: 800px;
+  }
+
+  @include e(list) {
+    &:last-child {
+      border-bottom: 1px solid $manatee;
+    }
+
+    @media #{$break--m} {
+      @include flexy($j-content: space-between, $a-items: null);
+
+      &:last-child {
+        border-bottom: initial;
+      }
+    }
+  }
+
+  @include e(item) {
+    cursor: $cursor;
+    padding: em(20px) em(0px);
+    border-top: 1px solid $manatee;
+    position: relative;
+
+    &:hover {
+      color: $carnation;
+    }
+
+    &.show {
+      color: $primary--col;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        left: 0;
+        transform: translateX(50%);
+        height: 5px;
+        background-color: $carnation;
+
+        @media #{$break--m} {
+          bottom: -22px;
+          left: 50%;
+          width: 240px;
+          transform: translateX(-44%);
+        }
+      }
+    }
+
+    @media #{$break--m} {
+      padding: initial;
+      border-top: initial;
+    }
+  }
+}
+
+.tab-content {
+  padding: $padding;
+  text-align: $text--center;
+
+  @include e(img) {
+    margin-bottom: em(50px);
+    position: relative;
+    flex: 1;
+    margin-right: em(25px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: em(70px);
+      right: em(70px);
+      bottom: 0;
+      left: -50em;
+      z-index: -1;
+      height: 80%;
+      border-radius: em(0px) em(150px) em(150px) em(0px);
+      background-color: $secondary--col;
+
+      @media #{$break--s} {
+        top: em(120px);
+        right: em(150px);
+      }
+
+      @media #{$break--l} {
+        right: em(90px);
+      }
+    }
+  }
+
+  @include e(title) {
+    margin-bottom: em(10px);
+  }
+
+  @include e(body) {
+    flex: 1;
+    margin-top: em(80px);
+
+    @media #{$break--l} {
+      margin-top: initial;
+      text-align: left;
+    }
+  }
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+.show[data-tab-content] {
+  display: block;
+
+  @media #{$break--l} {
+    @include flexy();
+
+    animation: slide 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+}
+
+/* ******************************** ANIMATION ******************************* */
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+  }
+}

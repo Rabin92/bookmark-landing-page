@@ -1,0 +1,102 @@
+// ==========================================================================
+// Nav Section
+// ==========================================================================
+
+.brand-logo {
+  position: relative;
+  z-index: 3;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(37, 43, 70, 0.95);
+  padding: $gutters;
+  animation: fadeDown 500ms ease-in-out forwards;
+
+  @include e(list) {
+    text-align: $text--center;
+    margin-top: em(80px);
+  }
+
+  @include e(item) {
+    border-bottom: 1px solid $manatee;
+    padding: em(22px) 0;
+
+    a {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 1.389rem;
+      display: block;
+
+      &:hover {
+        color: $carnation;
+        transition: color 100ms ease-in-out;
+      }
+    }
+  }
+
+  @include m(first-item) {
+    border-top: 1px solid $manatee;
+  }
+
+  @include m(last-item) {
+    border-bottom: none;
+    border: 2px solid $white;
+    border-radius: em(5px);
+    margin-top: $mt;
+    padding: em(12px) 0;
+    display: block;
+
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+  @include e(social-icon) {
+    position: absolute;
+    left: 40%;
+    bottom: 20px;
+
+    a + a {
+      margin-left: em(25px);
+    }
+
+    @extend %svg-hover;
+  }
+}
+
+.nav-horizontal {
+  display: none;
+  margin-right: em(140px);
+
+  @media #{$break--l} {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+
+    @include e(item) {
+      display: inline-block;
+      margin-left: em(50px);
+
+      a:hover {
+        color: $carnation;
+        transition: color 0.85ms ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  100% {
+    opacity: 1;
+  }
+}

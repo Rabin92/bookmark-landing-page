@@ -1,0 +1,107 @@
+// ==========================================================================
+// FAQ Section
+// ==========================================================================
+
+.faq-container {
+  padding: $padding;
+  text-align: $text--center;
+
+  @media #{$break--m} {
+    @include centerBox();
+  }
+}
+
+.faq-flex-wrap {
+  padding: $gutters;
+
+  @media #{$break--m} {
+    width: 60%;
+    max-width: 535px;
+  }
+}
+
+.faq {
+  margin-bottom: em(50px);
+
+  @include e(title) {
+    margin-bottom: $mb;
+  }
+}
+
+// ==========================================================================
+// Accordion Section
+// ==========================================================================
+
+.accordion {
+  text-align: left;
+  position: relative;
+
+  @include e(body) {
+    border-bottom: 1px solid $manatee;
+    padding: 0.95em 0.35em 0.45em;
+
+    @media #{$break--m} {
+      @include m(brdr) {
+        border-top: 1px solid $manatee;
+      }
+    }
+  }
+
+  @include e(input) {
+    display: none;
+
+    &:checked {
+      + .accordion__label {
+        &::after {
+          transform: rotate(-90deg);
+          color: $carnation;
+          transition: transform 500ms ease-in-out;
+        }
+      }
+
+      ~ .accordion__content {
+        max-height: 100vh;
+        margin-top: em(25px);
+        animation: slideIn 0.5s ease-in-out forwards;
+      }
+    }
+  }
+
+  @include e(label) {
+    cursor: $cursor;
+    color: $primary--col;
+    display: block;
+
+    &:hover {
+      color: $carnation;
+    }
+
+    &::after {
+      content: '\276F';
+      position: absolute;
+      right: 0;
+      color: $secondary--col;
+      transform: rotate(90deg);
+      transition: transform 500ms ease-in-out;
+    }
+  }
+
+  @include e(content) {
+    overflow: hidden;
+    max-height: 0;
+    margin: em(8px) 0;
+    line-height: 1.6;
+  }
+}
+
+/* ******************************** ANIMATION ******************************* */
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+  }
+}

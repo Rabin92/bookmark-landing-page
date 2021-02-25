@@ -1,0 +1,158 @@
+// ==========================================================================
+// Footer Section
+// ==========================================================================
+
+.upper {
+  padding: 3em 0;
+  text-align: $text--center;
+  background-color: $secondary--col;
+
+  @media #{$break--m} {
+    @include centerBox();
+  }
+}
+
+.contact {
+  padding: $gutters;
+
+  @include e(input) {
+    width: 100%;
+    padding: 0.7em;
+    border-radius: em(5px);
+    margin-bottom: $mb;
+
+    &::placeholder {
+      font-size: 0.889rem;
+      color: lighten($manatee, 20%);
+    }
+
+    @media #{$break--m} {
+      width: 65%;
+      margin-right: em(15px);
+      margin-bottom: initial;
+    }
+  }
+
+  @include e(number) {
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+    letter-spacing: 0.225em;
+    font-size: 0.833rem;
+  }
+
+  @include e(header) {
+    color: $white;
+    font-size: 1.667rem;
+
+    @media #{$break--m} {
+      max-width: 400px;
+    }
+  }
+
+  @include e(flex) {
+    margin-top: 2em;
+    position: relative;
+
+    @media #{$break--m} {
+      @include flexy();
+    }
+  }
+
+  @include e(error) {
+    display: none;
+    position: absolute;
+    top: calc(18px - 5px);
+    right: calc(100% - 95%);
+
+    @media #{$break--m} {
+      top: calc(20px - 5px);
+      right: calc(100% - 60%);
+    }
+  }
+
+  @include e(error-msg) {
+    display: none;
+    font-size: 0.889rem;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: calc(100% - 50%);
+    background-color: $carnation;
+    color: $white;
+    padding: 0.25em;
+    border-radius: 0 0 em(5px) em(5px);
+
+    @media #{$break--m} {
+      width: 65%;
+      left: 0;
+      bottom: calc(50% - 45px);
+    }
+  }
+}
+
+.footer-container {
+  background-color: $primary--col;
+}
+
+.lower {
+  padding: 3em;
+  text-align: $text--center;
+
+  @media #{$break--l} {
+    @include flexy($j-content: space-between);
+    text-align: left;
+    padding: $gutters;
+  }
+
+  &-container {
+    ul {
+      margin-top: $mt;
+
+      @media #{$break--l} {
+        margin-top: initial;
+        margin-left: em(30px);
+      }
+    }
+
+    li {
+      padding: 0.85em;
+      @media #{$break--l} {
+        display: inline-block;
+      }
+    }
+
+    li a {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+
+      &:hover {
+        color: $carnation;
+        transition: fill 0.95ms ease-in-out;
+      }
+    }
+  }
+}
+
+.col-1 {
+  @media #{$break--l} {
+    @include flexy();
+  }
+}
+
+.col-2 {
+  margin-top: $mt;
+
+  .social-icon {
+    @extend %svg-hover;
+
+    + .social-icon {
+      margin-left: em(20px);
+    }
+  }
+
+  @media #{$break--l} {
+    margin-top: initial;
+  }
+}

@@ -1,0 +1,13 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+// Import if primary Google Fonts URL is defined
+@if variable-exists(font-url--primary) {
+  @import url($font-url--primary);
+}
+
+// Calculate em values
+@function em($target, $context: $base__font-size) {
+  @return ($target / $context) * 1em;
+}

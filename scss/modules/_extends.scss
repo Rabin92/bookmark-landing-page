@@ -1,0 +1,20 @@
+// ==========================================================================
+// Placeholders
+// ==========================================================================
+
+%menu {
+  border: 1px solid $black;
+  width: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+%border {
+  border: 2px solid transparent;
+}
+
+%svg-hover {
+  svg path:hover {
+    fill: $carnation;
+    transition: fill 400ms ease-in-out;
+  }
+}

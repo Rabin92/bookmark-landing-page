@@ -1,0 +1,23 @@
+// ==========================================================================
+// Feature Section
+// ==========================================================================
+
+.feature-container {
+  @media #{$break--m} {
+    @include centerBox();
+  }
+  padding: $gutters $gutters 2em;
+}
+
+.feature {
+  text-align: $text--center;
+
+  @media #{$break--m} {
+    width: 65%;
+    max-width: $m-width;
+  }
+
+  @include e(header) {
+    margin-bottom: $mb;
+  }
+}

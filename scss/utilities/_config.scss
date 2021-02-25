@@ -1,0 +1,49 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+// Font Stacks
+$font-url--primary: 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap';
+$font-family--primary: 'Rubik', sans-serif;
+
+// Font Weights
+$font-weight--medium: 400;
+$font-weight--bold: 500;
+
+// Descriptive Base Colors
+$white: #fff;
+$black: #000;
+$royalBlue: #5368df;
+$carnation: #fa5757;
+$ebonyClay: #252b46;
+$manatee: #9194a1;
+
+// Color Usage
+$primary--col: $ebonyClay;
+$secondary--col: $royalBlue;
+$cta--col: $carnation;
+$text--col: $manatee;
+
+// Text
+$base__font-size: 18px;
+$base__line: 24px;
+$text--center: center;
+
+// Cursor
+$cursor: pointer;
+
+// Path to Assets
+$path--rel: '../images';
+
+// Gutters
+$gutters: 1em;
+
+// Button box shadow
+$btn--shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+  rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+  rgba(0, 0, 0, 0.07) 0px 16px 16px;
+
+// Media queries
+$break--s: '(min-width: 33.333em)';
+$break--m: '(min-width: 42.666em)';
+$break--l: '(min-width: 56.888em)';
