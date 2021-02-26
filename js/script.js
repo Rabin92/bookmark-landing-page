@@ -1,3 +1,5 @@
+const colors = ['#fff', '#252b46'];
+
 const body = document.querySelector('body');
 const nav = document.querySelector('#js-nav');
 const logoPathOne = document.querySelector('.active-path');
@@ -10,13 +12,14 @@ const menuLines = menu.children;
 menu.addEventListener('click', () => {
   if (nav.style.display === 'none') {
     nav.style.display = 'block';
+    nav.style.overflowY = 'scroll';
     body.style.overflow = 'hidden';
-    logoPathOne.style.fill = '#fff';
-    logoPathTwo.style.fill = '#fff';
-    logoPathThree.style.fill = '#252b46';
+    logoPathOne.style.fill = colors[0];
+    logoPathTwo.style.fill = colors[0];
+    logoPathThree.style.fill = colors[3];
     menu.classList.add('active');
     for (let i = 0; i < menuLines.length; i++) {
-      menuLines[i].style.border = '1px solid #fff';
+      menuLines[i].style.border = '1px solid  #fff';
     }
   } else {
     nav.style.display = 'none';
