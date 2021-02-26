@@ -1048,4 +1048,15 @@ input {
   }
 }
 
+.footer-bottom {
+  text-align: center;
+  padding: 0.45em;
+}
+.footer-bottom a {
+  color: #4040ee;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=styles.css.map */
