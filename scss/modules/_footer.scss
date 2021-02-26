@@ -156,3 +156,16 @@
     margin-top: initial;
   }
 }
+
+.footer-bottom {
+  text-align: $text--center;
+  padding: 0.45em;
+
+  a {
+    color: rgb(64, 64, 238);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
