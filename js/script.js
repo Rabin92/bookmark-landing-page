@@ -1,4 +1,4 @@
-const colors = ['#fff', '#252b46'];
+const colors = ['#fff', '#000', '#fa5757', '#252b46'];
 
 const body = document.querySelector('body');
 const nav = document.querySelector('#js-nav');
@@ -19,7 +19,7 @@ menu.addEventListener('click', () => {
     logoPathThree.style.fill = colors[3];
     menu.classList.add('active');
     for (let i = 0; i < menuLines.length; i++) {
-      menuLines[i].style.border = '1px solid  #fff';
+      menuLines[i].style.border = `1px solid  ${colors[0]}`;
     }
   } else {
     nav.style.display = 'none';
@@ -29,7 +29,7 @@ menu.addEventListener('click', () => {
     logoPathThree.style.fill = '';
     menu.classList.remove('active');
     for (let i = 0; i < menuLines.length; i++) {
-      menuLines[i].style.border = '1px solid #000';
+      menuLines[i].style.border = `1px solid ${colors[1]}`;
     }
   }
 });
@@ -62,7 +62,7 @@ btn.addEventListener('click', () => {
     errorIcon.style.display = '';
     errorMsg.style.display = '';
   } else {
-    email.style.border = '2px solid #fa5757';
+    email.style.border = `2px solid  ${colors[2]}`;
     errorIcon.style.display = 'block';
     errorMsg.style.display = 'block';
   }
